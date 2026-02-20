@@ -67,15 +67,15 @@
     .section-desc{color:var(--dim);max-width:600px;margin-bottom:1.5rem;font-size:0.9rem;}
 
     .wiki-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;}
-    .wiki-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all 0.3s;cursor:default;}
+    .wiki-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all 0.3s;cursor:pointer;}
     .wiki-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,0.3);}
     .wiki-card h3{font-size:1.05rem;font-weight:800;margin-bottom:0.3rem;letter-spacing:-0.3px;}
     .wiki-card .wc-desc{font-size:0.8rem;color:var(--dim);line-height:1.5;margin-bottom:0.75rem;}
     .wiki-card .wc-meta{display:flex;gap:0.5rem;flex-wrap:wrap;}
     .wiki-card .wc-tag{font-size:0.65rem;color:var(--muted);font-weight:600;background:var(--surface);padding:0.15rem 0.5rem;border-radius:4px;}
 
-    .email-section{text-align:center;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:16px;}
-    .email-section h2{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;}
+    .email-section{text-align:center;padding:2rem;background:var(--card);border:1px solid var(--accent);border-radius:16px;box-shadow:0 0 20px var(--accent-glow);}
+    .email-section h2{font-size:1.5rem;font-weight:800;margin-bottom:0.5rem;color:var(--accent);}
     .email-section p{color:var(--dim);font-size:0.9rem;margin-bottom:1rem;}
 
     .faq-list{max-width:700px;}
@@ -122,7 +122,7 @@
   <div class="nav-inner">
     <a href="/" class="nav-logo" style="text-decoration:none;color:var(--text)"><span style="display:inline-flex;align-items:center;width:28px;height:28px;vertical-align:middle;margin-right:4px;"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#06b6d4" opacity="0.15" stroke="#06b6d4" stroke-width="2"/><path d="M14 20 C14 14 17 10 20 10 C23 10 26 14 26 20 C26 24 24 26 22 27 L22 30 L18 30 L18 27 C16 26 14 24 14 20Z" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linecap="round"/><path d="M18 30 L22 30 M18 32 L22 32" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/><path d="M21 15 L19 20 L22 20 L20 25" fill="none" stroke="#facc15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <span class="accent">stimulant.work</span></a>
     <div class="nav-links">
-      <a href="#focus">Focus</a> <a href="#schedule">Schedule</a> <a href="#faq">FAQ</a>
+      <a href="#focus">Focus</a> <a href="#schedule">Schedule</a> <a href="#faq">FAQ</a> <a href="#spin-wheel">Spin & Win</a>
       <a href="https://stimulant.wiki" class="nav-cta">Wiki</a>
       <a href="#" class="tip-btn" onclick="event.preventDefault();document.getElementById('tipModal').classList.add('active');document.body.style.overflow='hidden'"><span class="tip-icon">🧡</span> Tip</a>
     </div>
@@ -168,30 +168,34 @@
   <div class="section-title">Professional Focus Stacks</div>
   <div class="section-desc">Cognitive enhancers optimized for knowledge work and professional performance.</div>
   <div class="wiki-grid">
-        <div class="wiki-card">
+        <a href="https://stimulant.wiki/?s=developer+stack" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">💻</div>
           <h3>Developer Stack</h3>
           <div class="wc-desc">Caffeine 100mg + L-Theanine 200mg + Creatine 5g. Clean focus for coding. No crashes during long debugging sessions.</div>
           <div class="wc-meta"><span class="wc-tag">Tech</span><span class="wc-tag">Popular</span></div>
-        </div>
-        <div class="wiki-card">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
+        <a href="https://stimulant.wiki/?s=analyst+stack" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">📊</div>
           <h3>Analyst Stack</h3>
           <div class="wc-desc">Alpha-GPC 300mg + caffeine 150mg + omega-3. For spreadsheet marathons, data analysis, and detail-oriented work.</div>
           <div class="wc-meta"><span class="wc-tag">Finance</span><span class="wc-tag">Detail</span></div>
-        </div>
-        <div class="wiki-card">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
+        <a href="https://stimulant.wiki/?s=presentation+stack" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">🎤</div>
           <h3>Presentation Stack</h3>
           <div class="wc-desc">L-Theanine 400mg + caffeine 50mg. High theanine ratio calms nerves while maintaining sharp verbal fluency.</div>
           <div class="wc-meta"><span class="wc-tag">Speaking</span><span class="wc-tag">Social</span></div>
-        </div>
-        <div class="wiki-card">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
+        <a href="https://stimulant.wiki/?s=writing+stack" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">✍️</div>
           <h3>Writing Stack</h3>
           <div class="wc-desc">Caffeine 100mg + Lion's Mane 1000mg. Sustained creative energy without the scattered feeling of too much caffeine.</div>
           <div class="wc-meta"><span class="wc-tag">Creative</span><span class="wc-tag">Sustained</span></div>
-        </div>
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
   </div>
 </section>
 
@@ -200,24 +204,27 @@
   <div class="section-title">Energy Throughout the Day</div>
   <div class="section-desc">Timing your energy for maximum professional impact.</div>
   <div class="wiki-grid">
-        <div class="wiki-card">
+        <a href="https://stimulant.wiki/?s=morning+(8-12pm)" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">🌅</div>
           <h3>Morning (8-12pm)</h3>
           <div class="wc-desc">Peak cortisol = peak focus. Do your hardest cognitive work now. Caffeine after 9:30am. Protect this time from meetings.</div>
           <div class="wc-meta"><span class="wc-tag">Morning</span><span class="wc-tag">Deep Work</span></div>
-        </div>
-        <div class="wiki-card">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
+        <a href="https://stimulant.wiki/?s=afternoon+(1-4pm)" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">🌤️</div>
           <h3>Afternoon (1-4pm)</h3>
           <div class="wc-desc">Post-lunch dip is real. Light caffeine boost (green tea), walk, or rhodiola 200mg. Schedule collaborative work here.</div>
           <div class="wc-meta"><span class="wc-tag">Afternoon</span><span class="wc-tag">Recovery</span></div>
-        </div>
-        <div class="wiki-card">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
+        <a href="https://stimulant.wiki/?s=late+day+(4-6pm)" target="_blank" rel="noopener noreferrer" class="wiki-card" style="text-decoration:none;color:var(--text);display:block;">
           <div style="font-size:2rem;margin-bottom:0.5rem;">🌆</div>
           <h3>Late Day (4-6pm)</h3>
           <div class="wc-desc">No more caffeine. Wrap up tasks, plan tomorrow, admin work. This is your wind-down runway for good sleep tonight.</div>
           <div class="wc-meta"><span class="wc-tag">Evening</span><span class="wc-tag">Planning</span></div>
-        </div>
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:600;margin-top:0.5rem;">Read More &rarr;</div>
+        </a>
   </div>
 </section>
 
@@ -266,6 +273,132 @@
     </a>
   </div>
 </section>
+
+<!-- SPIN WHEEL -->
+<section class="section" id="spin-wheel">
+  <div class="section-label">Bonus</div>
+  <div class="section-title">Spin to Win</div>
+  <div class="section-desc">Try your luck! Spin the wheel for exclusive deals, discounts, and prizes from the Stimulant Network.</div>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;margin-top:1rem;">
+    <div style="position:relative;width:320px;height:320px;">
+      <canvas id="spinCanvas" width="320" height="320" style="border-radius:50%;box-shadow:0 0 30px var(--accent-glow);"></canvas>
+      <div id="spinPointer" style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:1.8rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));">&#9660;</div>
+    </div>
+    <button id="spinBtn" onclick="spinWheel()" style="background:var(--accent);color:#fff;border:none;padding:0.7rem 2rem;border-radius:10px;font-weight:800;font-size:1rem;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 15px var(--accent-glow);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Spin the Wheel!</button>
+    <div id="spinResult" style="text-align:center;min-height:2rem;font-weight:700;font-size:1.1rem;color:var(--accent);"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var prizes = [
+    {label:'10% Off Shop', color:'#3b82f6', action:'https://stimulant.shop'},
+    {label:'Free Guide', color:'#10b981', action:'https://stimulant.wiki'},
+    {label:'Spin Again', color:'#f59e0b', action:'spin'},
+    {label:'$5 Stake Bonus', color:'#1475e1', action:'https://stake.com/?c=MyXSehCn'},
+    {label:'15% Off Stack', color:'#d946ef', action:'https://stimulant.shop'},
+    {label:'Try Shuffle', color:'#7c3aed', action:'https://shuffle.com?r=q94atl9m05'},
+    {label:'Free Ebook', color:'#06b6d4', action:'https://stimulant.wiki'},
+    {label:'Lucky Winner!', color:'#ef4444', action:'https://stimulant.shop'}
+  ];
+  var canvas = document.getElementById('spinCanvas');
+  var ctx = canvas.getContext('2d');
+  var spinning = false, angle = 0;
+  var sliceAngle = (2*Math.PI)/prizes.length;
+
+  function drawWheel(rot){
+    ctx.clearRect(0,0,320,320);
+    ctx.save();
+    ctx.translate(160,160);
+    ctx.rotate(rot);
+    for(var i=0;i<prizes.length;i++){
+      var start = i*sliceAngle;
+      var end = start+sliceAngle;
+      ctx.beginPath();
+      ctx.moveTo(0,0);
+      ctx.arc(0,0,155,start,end);
+      ctx.closePath();
+      ctx.fillStyle = prizes[i].color;
+      ctx.globalAlpha = 0.85;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = '#0e0e18';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.save();
+      ctx.rotate(start+sliceAngle/2);
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 11px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(prizes[i].label, 90, 0);
+      ctx.restore();
+    }
+    ctx.beginPath();
+    ctx.arc(0,0,22,0,2*Math.PI);
+    ctx.fillStyle = '#0e0e18';
+    ctx.fill();
+    ctx.strokeStyle = 'var(--accent)';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = '#fff';
+    ctx.font = 'bold 10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('SPIN',0,0);
+    ctx.restore();
+  }
+  drawWheel(0);
+
+  window.spinWheel = function(){
+    if(spinning) return;
+    spinning = true;
+    var btn = document.getElementById('spinBtn');
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    document.getElementById('spinResult').textContent = '';
+    var spins = 3 + Math.random()*3;
+    var target = spins * 2*Math.PI + Math.random()*2*Math.PI;
+    var start = angle;
+    var duration = 4000;
+    var startTime = performance.now();
+    function animate(now){
+      var elapsed = now - startTime;
+      var progress = Math.min(elapsed/duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      angle = start + (target - start) * ease;
+      drawWheel(angle);
+      if(progress < 1){
+        requestAnimationFrame(animate);
+      } else {
+        spinning = false;
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        var norm = angle % (2*Math.PI);
+        var idx = Math.floor((2*Math.PI - norm + Math.PI/2) % (2*Math.PI) / sliceAngle) % prizes.length;
+        var won = prizes[idx];
+        document.getElementById('spinResult').innerHTML = '&#127881; ' + won.label + '!';
+        if(typeof gtag==='function') gtag('event','spin_wheel',{prize:won.label,site:'work'});
+        try{
+          var FB='https://predict-network-ec767-default-rtdb.firebaseio.com';
+          fetch(FB+'/stimulant/work/spins.json').then(function(r){return r.json()}).then(function(d){
+            var c=(d&&d.count)||0;
+            fetch(FB+'/stimulant/work/spins.json',{method:'PATCH',body:JSON.stringify({count:c+1,last_prize:won.label,last:Date.now()})});
+          }).catch(function(err){console.warn('Spin tracking unavailable:', err.message||err)});
+        }catch(e){console.warn('Spin tracking error:', e)}
+        if(won.action==='spin'){
+          setTimeout(function(){document.getElementById('spinResult').textContent='Spinning again...';setTimeout(window.spinWheel,500)},1500);
+        } else {
+          setTimeout(function(){
+            document.getElementById('spinResult').innerHTML += '<br><a href="'+won.action+'" target="_blank" rel="noopener noreferrer" style="color:var(--accent);font-weight:700;font-size:0.9rem;">Claim Your Prize &rarr;</a>';
+          },800);
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  };
+})();
+</script>
 
 <!-- PROMO -->
 <div class="section">
@@ -326,14 +459,14 @@
     <a href="https://stimulant.homes">stimulant.homes</a>
     <a href="https://stake.com/?c=MyXSehCn" target="_blank" rel="noopener sponsored" style="color:#1475e1;font-weight:600;">Stake.com</a>
     <a href="https://shuffle.com?r=q94atl9m05" target="_blank" rel="noopener sponsored" style="color:#7c3aed;font-weight:600;">Shuffle</a>
-    <a href="https://stake.us/?c=L2a8nG6c" target="_blank" rel="noopener sponsored" style="color:#00c74d;font-weight:600;">Stake.us</a>
-    <a href="https://winna.com/?r=Spunkeroo" target="_blank" rel="noopener sponsored" style="color:#ff5f1f;font-weight:600;">Winna.com</a>
     <a href="https://coinbase.com/join/YAGES3X?src=referral-link" target="_blank" rel="noopener sponsored" style="color:#0052ff;font-weight:600;">Buy Crypto</a>
     <a href="https://shop.ledger.com/?r=0553c9ea1441" target="_blank" rel="noopener sponsored" style="color:#ff5500;font-weight:600;">Secure Your Crypto</a>
+    <a href="https://www.amazon.com/?tag=spunkart-20" target="_blank" rel="noopener sponsored" style="color:#ff9900;font-weight:600;">Shop on Amazon</a>
+    <a href="https://stake.us/?c=L2a8nG6c" target="_blank" rel="noopener sponsored" style="color:#00c74d;font-weight:600;">Stake.us</a>
+    <a href="https://winna.com/?r=Spunkeroo" target="_blank" rel="noopener sponsored" style="color:#ff5f1f;font-weight:600;">Winna.com</a>
     <a href="https://kalshi.com/sign-up/?referral=6b723b42-d0c9-4421-9b4e-5af4b4c6c42c" target="_blank" rel="noopener sponsored" style="color:#00d084;font-weight:600;">Trade on Kalshi</a>
     <a href="https://customgpt.ai/?fpr=spunk" target="_blank" rel="noopener sponsored" style="color:#06b6d4;font-weight:600;">CustomGPT</a>
     <a href="https://everyx.io/register?ref=AYHl4YqvjcaX" target="_blank" rel="noopener sponsored" style="color:#a855f7;font-weight:600;">EveryX Markets</a>
-    <a href="https://www.amazon.com/?tag=spunkart-20" target="_blank" rel="noopener sponsored" style="color:#ff9900;font-weight:600;">Shop on Amazon</a>
   </div>
   <div style="margin-bottom:12px;"><a href="#" class="tip-btn" onclick="event.preventDefault();document.getElementById('tipModal').classList.add('active');document.body.style.overflow='hidden'" style="font-size:0.75rem;padding:0.35rem 0.9rem"><span class="tip-icon">🧡</span> Support Us</a></div>
   <div class="footer-copy">&copy; 2026 stimulant.work | <a href="/privacy.html">Privacy & Terms</a> | <a href="mailto:contact@stimulant.work">contact@stimulant.work</a></div>
@@ -374,6 +507,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+// Auto-refresh every 10 seconds to keep content fresh
+setInterval(function(){ location.reload(); }, 10000);
 </script>
 
 <!-- Firebase Visitor Counter -->
@@ -383,7 +519,10 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   fetch(FB+'/stimulant/work/visitors.json').then(function(r){return r.json()}).then(function(d){
     var c=(d&&d.count)||0;
     fetch(FB+'/stimulant/work/visitors.json',{method:'PATCH',body:JSON.stringify({count:c+1,last:Date.now()})});
-  }).catch(function(){});
+  }).catch(function(err){
+    console.warn('Stimulant visitor counter unavailable:', err.message || err);
+    var fb=document.createElement('div');fb.style.cssText='text-align:center;padding:0.5rem;font-size:0.65rem;color:var(--muted)';fb.textContent='Welcome to stimulant.work — part of the Stimulant Network';var footer=document.querySelector('.footer');if(footer)footer.prepend(fb);
+  });
 })();
 </script>
 
