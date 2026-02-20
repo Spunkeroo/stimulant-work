@@ -108,6 +108,90 @@
     @keyframes tipPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
     .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:10000;opacity:0;pointer-events:none;transition:opacity .3s}
     .modal-overlay.active{opacity:1;pointer-events:all}
+
+    /* ============================================================
+       RESPONSIVE — TABLET (max-width: 768px)
+       ============================================================ */
+    @media(max-width:768px){
+      .nav-inner{padding:0.5rem 1rem;}
+      .nav-logo{font-size:1rem;}
+      .nav-links a:not(.nav-cta):not(.tip-btn){display:none;}
+      .nav-links{gap:0.5rem;}
+      .site-bar{padding:0.5rem 0.75rem;gap:0.6rem;}
+      .site-link{font-size:0.65rem;gap:0.2rem;}
+      .hero{padding:3rem 1rem 2.5rem;}
+      .hero h1{font-size:2.2rem;letter-spacing:-1px;}
+      .hero p{font-size:0.9rem;}
+      .hero-ctas{gap:0.5rem;}
+      .hero-cta{padding:0.5rem 1.2rem;font-size:0.8rem;}
+      .section{padding:2rem 1rem;}
+      .section-title{font-size:1.4rem;}
+      .section-desc{font-size:0.82rem;}
+      .wiki-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:0.75rem;}
+      .wiki-card{padding:1.2rem;}
+      .wiki-card h3{font-size:0.95rem;}
+      .wiki-card .wc-desc{font-size:0.75rem;}
+      .email-section{padding:1.5rem 1rem;}
+      .email-section h2{font-size:1.2rem;}
+      .email-section p{font-size:0.82rem;}
+      .faq-q{font-size:0.82rem;}
+      .faq-a{font-size:0.78rem;}
+      .promo{padding:1.5rem 1rem;}
+      .promo h3{font-size:1.1rem;}
+      .promo p{font-size:0.8rem;}
+      .promo-btns{gap:0.4rem;}
+      .promo-btn{font-size:0.72rem;padding:0.4rem 0.8rem;}
+      .footer{padding:1.5rem 1rem;}
+      .footer-links{gap:0.6rem 1rem;}
+      .footer-links a{font-size:0.65rem;}
+      .footer-copy{font-size:0.62rem;}
+      .footer-disc{font-size:0.6rem;}
+      .tip-btn{font-size:0.75rem;padding:0.35rem 0.9rem;}
+    }
+
+    /* ============================================================
+       RESPONSIVE — MOBILE (max-width: 480px)
+       ============================================================ */
+    @media(max-width:480px){
+      .nav-inner{padding:0.4rem 0.75rem;gap:0.4rem;}
+      .nav-logo{font-size:0.9rem;}
+      .nav-links{gap:0.3rem;}
+      .nav-cta{padding:0.3rem 0.6rem;font-size:0.68rem;}
+      .site-bar{padding:0.4rem 0.5rem;gap:0.4rem;justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;}
+      .site-link{font-size:0.58rem;flex-shrink:0;}
+      .hero{padding:2rem 0.75rem 1.5rem;}
+      .hero-badge{font-size:0.6rem;padding:0.2rem 0.6rem;}
+      .hero h1{font-size:1.6rem;letter-spacing:-0.5px;}
+      .hero p{font-size:0.82rem;margin-bottom:1.5rem;}
+      .hero-ctas{flex-direction:column;align-items:center;gap:0.5rem;width:100%;padding:0 1rem;}
+      .hero-cta{width:100%;text-align:center;justify-content:center;padding:0.55rem 1rem;font-size:0.8rem;}
+      .section{padding:1.5rem 0.75rem;}
+      .section-label{font-size:0.6rem;}
+      .section-title{font-size:1.2rem;letter-spacing:-0.3px;}
+      .section-desc{font-size:0.78rem;margin-bottom:1rem;}
+      .wiki-grid{grid-template-columns:1fr;gap:0.6rem;}
+      .wiki-card{padding:1rem;}
+      .wiki-card h3{font-size:0.9rem;}
+      .wiki-card .wc-desc{font-size:0.72rem;}
+      .wiki-card .wc-tag{font-size:0.58rem;}
+      .email-section{padding:1.25rem 0.75rem;border-radius:12px;}
+      .email-section h2{font-size:1.1rem;}
+      .email-section p{font-size:0.78rem;}
+      .faq-list{max-width:100%;}
+      .faq-q{font-size:0.78rem;}
+      .faq-a{font-size:0.72rem;}
+      .promo{padding:1.25rem 0.75rem;border-radius:12px;}
+      .promo h3{font-size:1rem;}
+      .promo p{font-size:0.75rem;}
+      .promo-btns{gap:0.35rem;}
+      .promo-btn{font-size:0.68rem;padding:0.35rem 0.7rem;width:auto;}
+      .footer{padding:1rem 0.75rem;}
+      .footer-links{gap:0.4rem 0.6rem;}
+      .footer-links a{font-size:0.6rem;}
+      .footer-copy{font-size:0.58rem;}
+      .footer-disc{font-size:0.58rem;margin-top:0.5rem;}
+      .tip-btn{font-size:0.7rem;padding:0.3rem 0.75rem;}
+    }
   </style>
 </head>
 <body>
@@ -280,11 +364,11 @@
   <div class="section-title">Spin to Win</div>
   <div class="section-desc">Try your luck! Spin the wheel for exclusive deals, discounts, and prizes from the Stimulant Network.</div>
   <div style="display:flex;flex-direction:column;align-items:center;gap:1.5rem;margin-top:1rem;">
-    <div style="position:relative;width:320px;height:320px;">
-      <canvas id="spinCanvas" width="320" height="320" style="border-radius:50%;box-shadow:0 0 30px var(--accent-glow);"></canvas>
+    <div style="position:relative;width:min(320px,80vw);height:min(320px,80vw);max-width:320px;max-height:320px;">
+      <canvas id="spinCanvas" width="320" height="320" style="border-radius:50%;box-shadow:0 0 30px var(--accent-glow);width:100%;height:100%;"></canvas>
       <div id="spinPointer" style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:1.8rem;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.5));">&#9660;</div>
     </div>
-    <button id="spinBtn" onclick="spinWheel()" style="background:var(--accent);color:#fff;border:none;padding:0.7rem 2rem;border-radius:10px;font-weight:800;font-size:1rem;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 15px var(--accent-glow);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Spin the Wheel!</button>
+    <button id="spinBtn" onclick="spinWheel()" style="background:var(--accent);color:#fff;border:none;padding:0.7rem 2rem;border-radius:10px;font-weight:800;font-size:1rem;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 15px var(--accent-glow);width:100%;max-width:280px;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">Spin the Wheel!</button>
     <div id="spinResult" style="text-align:center;min-height:2rem;font-weight:700;font-size:1.1rem;color:var(--accent);"></div>
   </div>
 </section>
@@ -425,12 +509,12 @@
   <div style="text-align:center;padding:2rem;background:var(--card);border:1px solid var(--border);border-radius:16px;">
     <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:0.3rem;">Share This Site</h3>
     <p style="color:var(--dim);font-size:0.85rem;margin-bottom:1rem;">Help others discover stimulant.work. Share on X and tag @SpunkArt13!</p>
-    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;">
-      <a href="https://twitter.com/intent/tweet?text=Check%20out%20stimulant.work%20%E2%80%94%20Workplace%20productivity%2C%20professional%20focus%20stacks%2C%20and%20caree%20%40SpunkArt13&url=https%3A%2F%2Fstimulant.work" target="_blank" rel="noopener noreferrer" class="promo-btn" style="background:#000;color:#fff;display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.2rem;border-radius:8px;font-weight:700;font-size:0.8rem;">
+    <div style="display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap;padding:0 0.5rem;">
+      <a href="https://twitter.com/intent/tweet?text=Check%20out%20stimulant.work%20%E2%80%94%20Workplace%20productivity%2C%20professional%20focus%20stacks%2C%20and%20caree%20%40SpunkArt13&url=https%3A%2F%2Fstimulant.work" target="_blank" rel="noopener noreferrer" class="promo-btn" style="background:#000;color:#fff;display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.2rem;border-radius:8px;font-weight:700;font-size:0.8rem;flex:1 1 auto;max-width:220px;justify-content:center;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         Share on X
       </a>
-      <a href="https://twitter.com/SpunkArt13" target="_blank" rel="noopener noreferrer" class="promo-btn pb-outline" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.2rem;border-radius:8px;font-weight:700;font-size:0.8rem;">
+      <a href="https://twitter.com/SpunkArt13" target="_blank" rel="noopener noreferrer" class="promo-btn pb-outline" style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1.2rem;border-radius:8px;font-weight:700;font-size:0.8rem;flex:1 1 auto;max-width:220px;justify-content:center;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         Follow @SpunkArt13
       </a>
@@ -508,8 +592,24 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// Auto-refresh every 10 seconds to keep content fresh
-setInterval(function(){ location.reload(); }, 10000);
+// Targeted content refresh — update visitor count and timestamps without full page reload
+(function(){
+  var refreshInterval = 300000; // every 5 minutes
+  setInterval(function(){
+    try {
+      var FB = 'https://predict-network-ec767-default-rtdb.firebaseio.com';
+      fetch(FB + '/stimulant/work/visitors.json').then(function(r){ return r.json(); }).then(function(d){
+        var count = (d && d.count) || 0;
+        var counterEls = document.querySelectorAll('[data-visitor-count]');
+        counterEls.forEach(function(el){ el.textContent = count.toLocaleString(); });
+      }).catch(function(){});
+    } catch(e) {}
+    // Update any displayed timestamps
+    document.querySelectorAll('[data-live-time]').forEach(function(el){
+      el.textContent = new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+    });
+  }, refreshInterval);
+})();
 </script>
 
 <!-- Firebase Visitor Counter -->
