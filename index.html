@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://stimulant.work">
   <meta property="og:image" content="https://stimulant.work/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="stimulant.work">
+  <meta name="twitter:site" content="@SpunkArt13">
   <meta name="twitter:title" content="stimulant.work">
   <meta name="twitter:description" content="Workplace productivity, professional focus stacks, and career performance.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2218%22%20fill%3D%22%2306b6d4%22%20opacity%3D%220.15%22%20stroke%3D%22%2306b6d4%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M14%2020%20C14%2014%2017%2010%2020%2010%20C23%2010%2026%2014%2026%2020%20C26%2024%2024%2026%2022%2027%20L22%2030%20L18%2030%20L18%2027%20C16%2026%2014%2024%2014%2020Z%22%20fill%3D%22none%22%20stroke%3D%22%2306b6d4%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M18%2030%20L22%2030%20M18%2032%20L22%2032%22%20fill%3D%22none%22%20stroke%3D%22%2306b6d4%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M21%2015%20L19%2020%20L22%2020%20L20%2025%22%20fill%3D%22none%22%20stroke%3D%22%23facc15%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E">
@@ -102,6 +102,12 @@
     .footer-links a:hover{color:var(--text);}
     .footer-copy{font-size:0.7rem;color:var(--muted);}
     .footer-disc{max-width:700px;margin:1rem auto 0;font-size:0.65rem;color:var(--muted);line-height:1.5;}
+    .tip-btn{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;border:none;padding:0.45rem 1.1rem;border-radius:999px;font-weight:800;font-size:0.82rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 0 12px rgba(34,197,94,0.4);transition:all .2s;white-space:nowrap}
+    .tip-btn:hover{box-shadow:0 0 20px rgba(34,197,94,0.7);transform:scale(1.05)}
+    .tip-icon{display:inline-block;animation:tipPulse 2s infinite}
+    @keyframes tipPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+    .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:10000;opacity:0;pointer-events:none;transition:opacity .3s}
+    .modal-overlay.active{opacity:1;pointer-events:all}
   </style>
 </head>
 <body>
@@ -109,6 +115,7 @@
 <!-- GA -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVNL11PEGP"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-GVNL11PEGP');</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","pn0x1z2y3w");</script>
 
 <!-- NAV -->
 <nav class="nav">
@@ -117,6 +124,7 @@
     <div class="nav-links">
       <a href="#focus">Focus</a> <a href="#schedule">Schedule</a> <a href="#faq">FAQ</a>
       <a href="https://stimulant.wiki" class="nav-cta">Wiki</a>
+      <a href="#" class="tip-btn" onclick="event.preventDefault();document.getElementById('tipModal').classList.add('active');document.body.style.overflow='hidden'"><span class="tip-icon">🧡</span> Tip</a>
     </div>
   </div>
 </nav>
@@ -274,6 +282,7 @@
       <a href="https://stimulant.wiki" class="promo-btn pb-outline" target="_blank" rel="noopener noreferrer">Stimulant Wiki</a>
       <a href="https://stimulant.shop" class="promo-btn pb-outline" target="_blank" rel="noopener noreferrer">Stimulant Shop</a>
       <a href="https://spunkart.com" class="promo-btn pb-outline" target="_blank" rel="noopener noreferrer">SpunkArt.com</a>
+      <a href="https://aliens.today" class="promo-btn" style="background:#ff6a00;" target="_blank" rel="noopener noreferrer">Aliens Today</a>
     </div>
   </div>
 </div>
@@ -326,6 +335,7 @@
     <a href="https://everyx.io/register?ref=AYHl4YqvjcaX" target="_blank" rel="noopener sponsored" style="color:#a855f7;font-weight:600;">EveryX Markets</a>
     <a href="https://www.amazon.com/?tag=spunkart-20" target="_blank" rel="noopener sponsored" style="color:#ff9900;font-weight:600;">Shop on Amazon</a>
   </div>
+  <div style="margin-bottom:12px;"><a href="#" class="tip-btn" onclick="event.preventDefault();document.getElementById('tipModal').classList.add('active');document.body.style.overflow='hidden'" style="font-size:0.75rem;padding:0.35rem 0.9rem"><span class="tip-icon">🧡</span> Support Us</a></div>
   <div class="footer-copy">&copy; 2026 stimulant.work | <a href="/privacy.html">Privacy & Terms</a> | <a href="mailto:contact@stimulant.work">contact@stimulant.work</a></div>
   <div class="footer-disc">
     <strong>Disclaimer:</strong> Workplace productivity tips are for educational purposes. Not medical advice. Supplement use is a personal choice — consult a healthcare provider if you have concerns.
@@ -376,5 +386,26 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   }).catch(function(){});
 })();
 </script>
+
+<!-- TIP MODAL -->
+<div class="modal-overlay" id="tipModal" onclick="if(event.target===this){this.classList.remove('active');document.body.style.overflow=''}">
+<div style="background:#0e0e16;border:1px solid #1a1a28;border-radius:16px;padding:28px 24px;max-width:420px;width:90%;max-height:85vh;overflow-y:auto;position:relative">
+<button onclick="document.getElementById('tipModal').classList.remove('active');document.body.style.overflow=''" style="position:absolute;top:12px;right:16px;background:none;border:none;color:#888;font-size:24px;cursor:pointer">&times;</button>
+<h3 style="text-align:center;font-size:1.2rem;margin-bottom:4px">🧡 Support Our Work</h3>
+<p style="text-align:center;font-size:0.8rem;color:#888;margin-bottom:20px">Tips keep our health guides free &amp; ad-free.<br>Powered by <a href="https://spunk.bet" target="_blank" style="color:#22c55e">Spunk.bet</a></p>
+<div style="font-size:0.7rem;color:#22c55e;font-weight:700;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">Crypto</div>
+<div style="margin-bottom:12px"><div style="font-size:0.72rem;color:#f7931a;font-weight:700;margin-bottom:3px">&#8383; Bitcoin (BTC)</div><div onclick="navigator.clipboard.writeText('bc1qr4zcdh9wz26gtn4pqz9c8wmxwalpjut8fxzsfn').then(()=>{this.querySelector('.cp').textContent='Copied!';setTimeout(()=>this.querySelector('.cp').textContent='Copy',2000)})" style="background:#0a0a10;border:1px solid #1a1a28;border-radius:8px;padding:8px 10px;font-size:0.65rem;font-family:monospace;cursor:pointer;display:flex;justify-content:space-between;align-items:center;word-break:break-all;color:#e8e8f0"><span>bc1qr4zcdh9wz26gtn4pqz9c8wmxwalpjut8fxzsfn</span><span class="cp" style="color:#22c55e;font-weight:700;margin-left:8px;white-space:nowrap">Copy</span></div></div>
+<div style="margin-bottom:12px"><div style="font-size:0.72rem;color:#627eea;font-weight:700;margin-bottom:3px">&#926; Ethereum (ETH)</div><div onclick="navigator.clipboard.writeText('0xD2aC89253b5F20f5b03b5B591297Fa4FCC37d41c').then(()=>{this.querySelector('.cp').textContent='Copied!';setTimeout(()=>this.querySelector('.cp').textContent='Copy',2000)})" style="background:#0a0a10;border:1px solid #1a1a28;border-radius:8px;padding:8px 10px;font-size:0.65rem;font-family:monospace;cursor:pointer;display:flex;justify-content:space-between;align-items:center;word-break:break-all;color:#e8e8f0"><span>0xD2aC89253b5F20f5b03b5B591297Fa4FCC37d41c</span><span class="cp" style="color:#22c55e;font-weight:700;margin-left:8px;white-space:nowrap">Copy</span></div></div>
+<div style="margin-bottom:16px"><div style="font-size:0.72rem;color:#9945ff;font-weight:700;margin-bottom:3px">&#9678; Solana (SOL)</div><div onclick="navigator.clipboard.writeText('Cds2aUuhyJa4NaZo7JER7LakW4VmmfnqVixHusrKKZsm').then(()=>{this.querySelector('.cp').textContent='Copied!';setTimeout(()=>this.querySelector('.cp').textContent='Copy',2000)})" style="background:#0a0a10;border:1px solid #1a1a28;border-radius:8px;padding:8px 10px;font-size:0.65rem;font-family:monospace;cursor:pointer;display:flex;justify-content:space-between;align-items:center;word-break:break-all;color:#e8e8f0"><span>Cds2aUuhyJa4NaZo7JER7LakW4VmmfnqVixHusrKKZsm</span><span class="cp" style="color:#22c55e;font-weight:700;margin-left:8px;white-space:nowrap">Copy</span></div></div>
+<div style="font-size:0.7rem;color:#22c55e;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">Fiat &amp; Apps</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px">
+<a href="https://paypal.me/SpunkArt13" target="_blank" rel="noopener" style="background:#0070ba;color:#fff;padding:10px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;font-size:0.8rem">PayPal</a>
+<a href="https://venmo.com/SpunkArt13" target="_blank" rel="noopener" style="background:#3d95ce;color:#fff;padding:10px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;font-size:0.8rem">Venmo</a>
+<a href="https://cash.app/$SpunkArt13" target="_blank" rel="noopener" style="background:#00d632;color:#fff;padding:10px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;font-size:0.8rem">Cash App</a>
+<a href="https://ko-fi.com/SpunkArt13" target="_blank" rel="noopener" style="background:#ff5e5b;color:#fff;padding:10px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;font-size:0.8rem">Ko-fi</a>
+</div>
+<p style="text-align:center;font-size:0.7rem;color:#555">Every tip keeps our guides free &amp; ad-free. 🙏</p>
+</div></div>
+
 </body>
 </html>
